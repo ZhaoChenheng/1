@@ -32,4 +32,20 @@
 5.s区装不下-->老年代
 6.老年代满了会触发FGC (Full GC)
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12345.png" width="600" height="400">
+ 
+## 1.5常见的垃圾回收器
+1.5.1 serial 年轻代 串行回收
+1.5.2 PS     年轻代 并行回收
+1.5.3 ParNew 年轻代 配合CMS的并行回收
+1.5.4 SerialOld
+1.5.5 ParallelOld
+1.5.6 ConcurrentMarkSweep 老年代 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）
+1.5.7 G1(10ms)
+1.5.8 ZGC(1ms)    PK   C++
+1.5.9 Shenandoah
+1.5.10 Eplisn
+JDK1.8  默认的垃圾回收：PS+ParallelOld
+ <img src="https://github.com/ZhaoChenheng/1/blob/master/img/222.png" width="600" height="400">
+
+  
 
