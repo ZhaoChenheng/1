@@ -5,9 +5,9 @@
   <img src="https://github.com/ZhaoChenheng/1/blob/master/img/WX20201030-090926%402x.png" width="600" height="400">
   
 ## 1.2如何定位垃圾 
-- 引用计数（不能解决循环引用的垃圾）    当变为0时,这个对象变为垃圾<br>
+### 引用计数（不能解决循环引用的垃圾）    当变为0时,这个对象变为垃圾<br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/1.png" width="600" height="400"><br>
-- 根可达算法  <br>
+### 根可达算法  <br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12.png" width="600" height="400"><br>
  
 ## 1.3常见的垃圾回收算法 
