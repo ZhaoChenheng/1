@@ -40,18 +40,18 @@
 - Parallel算法 几个G
 - CMS 几十G  起到了承上启下的作用 开始并发回收
 - G1  上百G内存  逻辑分代 物理不分代
-- ZGC 4T    
+- ZGC  Shenandoah  4T    
 - Epsilon  啥也不干(测试,确认不用GC参与就能干活)
 ### 常见的垃圾回收器<br>
-- 年轻代<br>
+i 年轻代<br>
 - serial  串行回收<br>
 - Parallel Scavenge   并行回收<br>
 - ParNew  配合CMS的并行回收<br>
-- 老年代 <br> 
+i 老年代 <br> 
 - Serial Old<br>
 - Parallel Old<br>
 - ConcurrentMarkSweep 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
--
+i 
 - G1(10ms)<br>
 - ZGC(1ms)    PK   C++<br>
 - Shenandoah<br>
