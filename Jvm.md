@@ -15,7 +15,7 @@
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/123.png" width="600" height="400">
 ### 1.3.2 Copying拷贝算法（没有碎片，浪费空间）<br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/1234.png" width="600" height="400">
-### 1.3.3 标记压缩算法（没有碎片 效率偏低）<br>
+#### 1.3.3 标记压缩算法（没有碎片 效率偏低）<br>
   <img src="https://github.com/ZhaoChenheng/1/blob/master/img/123456.png" width="600" height="400">
 ## 1.4JVM内存分代模型(用于分代垃圾回收算法)
 ### 1.4.1部分垃圾回收器的的使用模型
