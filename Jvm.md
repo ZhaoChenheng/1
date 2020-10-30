@@ -19,11 +19,11 @@
   <img src="https://github.com/ZhaoChenheng/1/blob/master/img/123456.png" width="600" height="400">
 ## 1.4JVM内存分代模型(用于分代垃圾回收算法)
 ### 1.4.1部分垃圾回收器的的使用模型
-### 1.4.2新生代+老年代+永久代(1.7)/元数据区(1.8 Metaspace)
-永久代/元数据区 -->.class      
-永久代必须指定大小限制   元数据可以设置，也可以不设置(受限于物理内存)
-符串常量1.7--永久代  1.8--堆
-### 1.4.3 堆内存逻辑分区
+### 1.4.2新生代+老年代+永久代(1.7)/元数据区(1.8 Metaspace)<br>
+永久代/元数据区 -->.class      <br>
+永久代必须指定大小限制   元数据可以设置，也可以不设置(受限于物理内存)<br>
+符串常量1.7--永久代  1.8--堆<br>
+### 1.4.3 堆内存逻辑分区<br>
 新生代=Eden + 2个suvivor区      老年代(顽固分子)<br>
 1.YGC回收之后,大多数对象都会被回收,剩下的活着的对象全部放入s0<br>
 2.再次YGC,活着的对象eden+s0-->s1<br>
@@ -34,16 +34,16 @@
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12345.png" width="600" height="400">
  
 ## 1.5常见的垃圾回收器
-1.5.1 serial 年轻代 串行回收<br>
-1.5.2 PS     年轻代 并行回收<br>
-1.5.3 ParNew 年轻代 配合CMS的并行回收<br>
-1.5.4 SerialOld<br>
-1.5.5 ParallelOld<br>
-1.5.6 ConcurrentMarkSweep 老年代 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
-1.5.7 G1(10ms)<br>
-1.5.8 ZGC(1ms)    PK   C++<br>
-1.5.9 Shenandoah<br>
-1.5.10 Eplisn<br>
+1 serial 年轻代 串行回收<br>
+2 PS     年轻代 并行回收<br>
+3 ParNew 年轻代 配合CMS的并行回收<br>
+4 SerialOld<br>
+5 ParallelOld<br>
+6 ConcurrentMarkSweep 老年代 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
+7 G1(10ms)<br>
+8 ZGC(1ms)    PK   C++<br>
+9 Shenandoah<br>
+10 Eplisn<br>
 JDK1.8  默认的垃圾回收：PS+ParallelOld<br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/222.png" width="600" height="400">
 
