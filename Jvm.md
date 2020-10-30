@@ -22,7 +22,7 @@
 - 新生代+老年代+永久代(1.7)/元数据区(1.8 Metaspace)
 - 永久代/元数据区 -->.class      
 - 永久代必须指定大小限制   元数据可以设置，也可以不设置(受限于物理内存)<br>
-- 符串常量1.7--永久代  1.8--堆<br>
+- 字符串常量1.7--永久代  1.8--堆<br>
 ### 1.4.1堆内存逻辑分区<br>
 新生代=Eden + 2个suvivor区      老年代(顽固分子)<br>
 - 1.YGC回收之后,大多数对象都会被回收(80%,90%),剩下的活着的对象全部放入s0<br>
@@ -44,19 +44,19 @@
 - Epsilon  啥也不干(测试,确认不用GC参与就能干活)
 ### 1.5.2常见的垃圾回收器<br>
 - 年轻代<br>
-- serial  串行回收<br>
-- Parallel Scavenge   并行回收<br>
-- ParNew  配合CMS的并行回收<br>
+    - serial  串行回收<br>
+    - Parallel Scavenge   并行回收<br>
+    - ParNew  配合CMS的并行回收<br>
 - 老年代 <br> 
-- Serial Old<br>
-- Parallel Old<br>
-- ConcurrentMarkSweep 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
+    - Serial Old<br>
+    - Parallel Old<br>
+    - ConcurrentMarkSweep 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
 - 之后不分代
-- G1(10ms)<br>
-- ZGC(1ms)    PK   C++<br>
-- Shenandoah<br>
-- Eplisn<br>
-- 默认的垃圾回收：PS+ParallelOld<br>
+    - G1(10ms)<br>
+    - ZGC(1ms)    PK   C++<br>
+    - Shenandoah<br>
+    - Eplisn<br>
+- 1.8默认的垃圾回收：PS+ParallelOld<br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/222.png" width="600" height="400">
 
   
