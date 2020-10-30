@@ -34,7 +34,7 @@
 <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12345.png" width="600" height="400"><br>
  
 ## 1.5垃圾回收器
-### 垃圾回收器的发展路线
+### 1.5.1垃圾回收器的发展路线
 - 是随着内存越来越大的过程而演变
 - Serial算法  几十M
 - Parallel算法 几个G
@@ -42,16 +42,16 @@
 - G1  上百G内存  逻辑分代 物理不分代
 - ZGC  Shenandoah  4T    
 - Epsilon  啥也不干(测试,确认不用GC参与就能干活)
-### 常见的垃圾回收器<br>
-i 年轻代<br>
+### 1.5.2常见的垃圾回收器<br>
+- 年轻代<br>
 - serial  串行回收<br>
 - Parallel Scavenge   并行回收<br>
 - ParNew  配合CMS的并行回收<br>
-i 老年代 <br> 
+- 老年代 <br> 
 - Serial Old<br>
 - Parallel Old<br>
 - ConcurrentMarkSweep 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
-i 
+- 之后不分代
 - G1(10ms)<br>
 - ZGC(1ms)    PK   C++<br>
 - Shenandoah<br>
