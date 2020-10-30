@@ -25,7 +25,7 @@
 - 符串常量1.7--永久代  1.8--堆<br>
 ### 1.4.1堆内存逻辑分区<br>
 新生代=Eden + 2个suvivor区      老年代(顽固分子)<br>
-- 1.YGC回收之后,大多数对象都会被回收,剩下的活着的对象全部放入s0<br>
+- 1.YGC回收之后,大多数对象都会被回收(80%,90%),剩下的活着的对象全部放入s0<br>
 - 2.再次YGC,活着的对象eden+s0-->s1<br>
 - 3.再次YGC,活着的对象eden+s1-->s0<br>
 - 4.年龄足够-->老年代(15 CMS 6)<br>
@@ -33,13 +33,25 @@
 - 6.老年代满了会触发FGC (Full GC)<br>
 <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12345.png" width="600" height="400"><br>
  
-## 1.5常见的垃圾回收器
-- serial 年轻代 串行回收<br>
-- PS     年轻代 并行回收<br>
-- ParNew 年轻代 配合CMS的并行回收<br>
-- SerialOld<br>
-- ParallelOld<br>
-- ConcurrentMarkSweep 老年代 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
+## 1.5垃圾回收器
+### 垃圾回收器的发展路线
+- 是随着内存越来越大的过程而演变
+- Serial算法  几十M
+- Parallel算法 几个G
+- CMS 几十G  起到了承上启下的作用 开始并发回收
+- G1  上百G内存  逻辑分代 物理不分代
+- ZGC 4T    
+- Epsilon  啥也不干(测试,确认不用GC参与就能干活)
+### 常见的垃圾回收器<br>
+- 年轻代<br>
+- serial  串行回收<br>
+- Parallel Scavenge   并行回收<br>
+- ParNew  配合CMS的并行回收<br>
+- 老年代 <br> 
+- Serial Old<br>
+- Parallel Old<br>
+- ConcurrentMarkSweep 并发的，垃圾回收和应用程序同时执行，降低STM的时间（200ms）<br>
+-
 - G1(10ms)<br>
 - ZGC(1ms)    PK   C++<br>
 - Shenandoah<br>
