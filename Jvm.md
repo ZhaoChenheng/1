@@ -5,13 +5,13 @@
   <img src="https://github.com/ZhaoChenheng/1/blob/master/img/WX20201030-090926%402x.png" width="400" height="200">
 ## 1.2如何定位垃圾 
 ### 1.2.1引用计数（不能解决循环引用的垃圾）    当变为0时,这个对象变为垃圾<br>
-![Image text](https://github.com/ZhaoChenheng/1/blob/master/img/1.png)
+ <img src="https://github.com/ZhaoChenheng/1/blob/master/img/1.png" width="600" height="400">
 ### 1.2.1根可达算法  <br>
-![Image text](https://github.com/ZhaoChenheng/1/blob/master/img/12.png)
+ <img src="https://github.com/ZhaoChenheng/1/blob/master/img/12.png" width="600" height="400">
 ## 1.3常见的垃圾回收算法 
 ### 1.3.1 Mark-Sweep标记清除算法（位置不连续   产生碎片） <br>
-![Image text](https://github.com/ZhaoChenheng/1/blob/master/img/123.png)
+ <img src="https://github.com/ZhaoChenheng/1/blob/master/img/123.png" width="600" height="400">
 ### 1.3.2 Copying拷贝算法（没有碎片，浪费空间）<br>
-![Image text](https://github.com/ZhaoChenheng/1/blob/master/img/1234.png)
+ <img src="https://github.com/ZhaoChenheng/1/blob/master/img/1234.png" width="600" height="400">
 ### 1.3.3 标记压缩算法（没有碎片 效率偏低）<br>
-![Image text](https://github.com/ZhaoChenheng/1/blob/master/img/12345.png)
+
