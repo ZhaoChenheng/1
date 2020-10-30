@@ -56,7 +56,7 @@
     - ZGC(1ms)    PK   C++<br>
     - Shenandoah<br>
     - Eplisn<br>
-- 1.8默认的垃圾回收：PS+ParallelOld<br>
+- 1.8默认的垃圾回收：Parallel Scavenge +ParallelOld<br>
  <img src="https://github.com/ZhaoChenheng/1/blob/master/img/222.png" width="600" height="400">
 
   
