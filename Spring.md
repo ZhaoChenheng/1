@@ -1,4 +1,4 @@
-
+# bean的声明周期
 ```
 public void refresh() throws BeansException, IllegalStateException {
         synchronized(this.startupShutdownMonitor) {
