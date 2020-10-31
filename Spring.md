@@ -65,6 +65,7 @@ protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
 		return getBeanFactory();
 	}
 ```
+### 在创建工厂的同时加载了配置文件
 ```
 	protected final void refreshBeanFactory() throws BeansException {
 		if (hasBeanFactory()) {
