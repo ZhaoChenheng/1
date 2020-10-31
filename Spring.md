@@ -9,19 +9,19 @@ public void refresh() throws BeansException, IllegalStateException {
             try {
                 this.postProcessBeanFactory(beanFactory);//返回的为空  所以不重要
                 this.invokeBeanFactoryPostProcessors(beanFactory);//Instantiate(实例化) and invoke（调用） all registered  BeanFactoryPostProcessor beans
-                this.registerBeanPostProcessors(beanFactory);//Instantiate(实例化) and register all BeanPostProcessod beans   注册了但是并没去用
+                this.registerBeanPostProcessors(beanFactory);//Instantiate(实例化) and register all BeanPostProcessod beans   注册了但是并没去执行
+                //下面四个this都是实例化前的初始工作
                 this.initMessageSource();//做国际化处理 
                 this.initApplicationEventMulticaster();//初始化应用程序事件的多播器，方便后续用来发布监听事件
                 this.onRefresh();//返回的为空  所以不重要
                 this.registerListeners();//注册监听器
-                //Instantiate all remaining(non-lazy-init) singletons 实例化所有的剩下的非懒加载的单例对象
-                this.finishBeanFactoryInitialization(beanFactory);
+                
+                this.finishBeanFactoryInitialization(beanFactory); //Instantiate all remaining(non-lazy-init) singletons 实例化所有的剩下的非懒加载的单例对象
                 this.finishRefresh();
             } catch (BeansException var9) {
                 if (this.logger.isWarnEnabled()) {
                     this.logger.warn("Exception encountered during context initialization - cancelling refresh attempt: " + var9);
                 }
-
                 this.destroyBeans();
                 this.cancelRefresh(var9);
                 throw var9;
@@ -60,4 +60,30 @@ public void refresh() throws BeansException, IllegalStateException {
 ```
 ## prepareBeanFactory创建工厂<br>
 ```
+protected ConfigurableListableBeanFactory obtainFreshBeanFactory() {
+                refreshBeanFactory();
+		return getBeanFactory();
+	}
 ```
+```
+	protected final void refreshBeanFactory() throws BeansException {
+		if (hasBeanFactory()) {
+			destroyBeans();//判断有没有工厂  有的话销毁
+			closeBeanFactory();
+		}
+		try {
+			DefaultListableBeanFactory beanFactory = createBeanFactory();//*创建工厂     工厂名字DefaultListableBeanFactory
+			beanFactory.setSerializationId(getId());//设置属性值
+			customizeBeanFactory(beanFactory);//设置属性值
+			loadBeanDefinitions(beanFactory);//*加载配置文件 xml
+			this.beanFactory = beanFactory;
+		}
+		catch (IOException ex) {
+			throw new ApplicationContextException("I/O error parsing bean definition source for " + getDisplayName(), ex);
+		}
+	}
+```
+## prepareBeanFactory创建工厂<br>
+```
+```
+
