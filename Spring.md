@@ -10,7 +10,7 @@ public void refresh() throws BeansException, IllegalStateException {
                 this.postProcessBeanFactory(beanFactory);//返回的为空  所以不重要
                 this.invokeBeanFactoryPostProcessors(beanFactory);//Instantiate(实例化) and invoke（调用） all registered  BeanFactoryPostProcessor beans
                
-                //下面五个方法都是实例化前的初始工作
+                //下面五个方法都是实例化前的初始工作    前置,后置增强需要观察者模式：监听器  监听事件 
 		this.registerBeanPostProcessors(beanFactory);//Instantiate(实例化) and register all BeanPostProcessod beans   注册了但是并没去执行
                 this.initMessageSource();//做国际化处理 
                 this.initApplicationEventMulticaster();//初始化应用程序事件的多播器，方便后续用来发布监听事件
