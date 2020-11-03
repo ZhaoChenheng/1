@@ -81,3 +81,11 @@ Set<People> set = new TreeSet<People>(new Comparator<People>() {
 			
 });
 ```
+# abstract class 和 interface有什么区别
+- 都不能创建对象
+- 接口必须是公开静态常量、公开抽象方法
+- 抽象类只能单继承，接口可以多实现
+- 接口没有静态代码块、动态代码块、构造方法
+- 实现接口的抽象方法，访问修饰符必须是public
+- 语法：继承在前  实现在后
+
