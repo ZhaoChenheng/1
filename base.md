@@ -35,8 +35,8 @@ public class Static {
 	- 与访问修饰符、返回值无关
 # 3.Comparable接口和Comparator接口的区别
 - 这两个接口的方法主要是对对象进行排序 
-- Comparable接口多用于对象类的实现  implements Comparable<Teacher>   重写compareTo(Teacher o)方法
-- Comparator接口多用于匿名内部类    new Comparator<People>(){}       重写compare(Object o1, Object o2)方法
+- Comparable接口多用于对象类的实现    重写compareTo(Teacher o)方法
+- Comparator接口多用于匿名内部类      重写compare(Object o1, Object o2)方法
 ```
 class Teacher implements Comparable<Teacher>{
 	String name;
