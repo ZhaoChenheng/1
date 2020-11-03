@@ -59,6 +59,7 @@ class Teacher implements Comparable<Teacher>{
 ```
 ```
 Set<People> set = new TreeSet<People>(new Comparator<People>() {
+	@Override
 	public int compare(People p1, People p2) {
 		if(p1.getSalary() - p2.getSalary()>0) {
 			return 1;
