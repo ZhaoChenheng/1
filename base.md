@@ -81,8 +81,8 @@ Set<People> set = new TreeSet<People>(new Comparator<People>() {
 			
 });
 ```
-# abstract class 和 interface有什么区别
-- 都不能创建对象
+# 4.abstract class 和 interface有什么区别
+- 都不能进行实例化
 - 接口必须是公开静态常量、公开抽象方法
 - 接口的实现类必须要实现该接口的所有方法，抽象类只要求实现所有的抽象方法
 - 抽象类只能单继承，接口可以多实现
