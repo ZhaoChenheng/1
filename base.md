@@ -33,3 +33,47 @@ public class Static {
 	- 常用的多个构造方法就是重载 
 	- 方法名相同 参数列表不同（类型，个数，顺序）   
 	- 与访问修饰符、返回值无关
+# Comparable接口和Comparator接口的区别
+```
+class Teacher implements Comparable<Teacher>{
+	String name;
+	Double salary;
+	
+	@Override
+	public int compareTo(Teacher o) {
+		if(this.salary>o.salary) {
+			return -1;
+		}else if(this.salary<o.salary) {
+			return 1;
+		}else {
+				if(this.name.compareTo(o.name)>0) {
+					return -1;
+				}else if(this.name.compareTo(o.name)<0) {
+					return 1;
+				}else {
+					return 0;
+				}
+		}
+	}
+}
+```
+```
+Set<People> set = new TreeSet<People>(new Comparator<People>() {
+	public int compare(People p1, People p2) {
+		if(p1.getSalary() - p2.getSalary()>0) {
+			return 1;
+		}else if (p1.getSalary() - p2.getSalary()<0){
+			return -1;
+		}else {
+			if(p1.getName().compareTo(p2.getName()) >0) {
+				return 1;
+			}else if(p1.getName().compareTo(p2.getName()) <0) {
+				return -1;
+			}else {
+				return 0;
+			}
+		}
+	}
+			
+});
+```
