@@ -34,7 +34,7 @@ public class Static {
 	- 方法名相同 参数列表不同（类型，个数，顺序）   
 	- 与访问修饰符、返回值无关
 # Comparable接口和Comparator接口的区别
-#### 这两个接口的方法主要是对对象进行排序
+- 这两个接口的方法主要是对对象进行排序
 ```
 class Teacher implements Comparable<Teacher>{
 	String name;
