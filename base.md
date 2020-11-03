@@ -24,7 +24,7 @@ public class Static {
 - 静态成员 在全类中只有一份，任何对象修改，都会影响其他对象
 - 静态方法可继承、不能重写、没有多态
 - 静态方法中不能使用this或super
-# 重写OverRide和重载Overload的区别
+# 2.重写OverRide和重载Overload的区别
 - 重写
 	- 是子类跟父类的关系,子类继承父类时重写父类的方法
 	- 返回值、方法名、参数列表 相同
@@ -33,7 +33,7 @@ public class Static {
 	- 常用的多个构造方法就是重载 
 	- 方法名相同 参数列表不同（类型，个数，顺序）   
 	- 与访问修饰符、返回值无关
-# Comparable接口和Comparator接口的区别
+# 3.Comparable接口和Comparator接口的区别
 - 这两个接口的方法主要是对对象进行排序
 ```
 class Teacher implements Comparable<Teacher>{
