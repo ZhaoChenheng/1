@@ -20,6 +20,14 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
     //要分配的最大数组大小
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     
+     /**
+     *默认无参构造函数
+     *DEFAULTCAPACITY_EMPTY_ELEMENTDATA 为0.初始化为10，也就是说初始其实是空数组 当添加第一个元素的时候数组容量才变成10
+     */
+    public ArrayList() {
+        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
+    }
+    
     /**
      * 带初始容量参数的构造函数（用户可以在创建ArrayList对象时自己指定集合的初始大小）
      */
@@ -32,13 +40,9 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
             throw new IllegalArgumentException("Illegal Capacity: "+ initialCapacity);
         }
     }
-     /**
-     *默认无参构造函数
-     *DEFAULTCAPACITY_EMPTY_ELEMENTDATA 为0.初始化为10，也就是说初始其实是空数组 当添加第一个元素的时候数组容量才变成10
-     */
-    public ArrayList() {
-        this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
-    }
+    
+    
+    
     
     //下面是ArrayList的扩容机制
     //ArrayList的扩容机制提高了性能，如果每次只扩充一个，
@@ -57,7 +61,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
         }
     }
     
-     //得到最小扩容量
+    //得到最小扩容量   
     private void ensureCapacityInternal(int minCapacity) {
         if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
             // 获取“默认的容量”和“传入参数”两者之间的最大值
@@ -88,5 +92,25 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
         //如果minCapacity大于MAX_ARRAY_SIZE，则新容量则为Interger.MAX_VALUE，否则，新容量大小则为 MAX_ARRAY_SIZE。
         if (newCapacity - MAX_ARRAY_SIZE > 0)   newCapacity = hugeCapacity(minCapacity);
         elementData = Arrays.copyOf(elementData, newCapacity);
+    }
+    //比较minCapacity和 MAX_ARRAY_SIZE
+    private static int hugeCapacity(int minCapacity) {
+        if (minCapacity < 0) // overflow
+            throw new OutOfMemoryError();
+        return (minCapacity > MAX_ARRAY_SIZE) ?
+            Integer.MAX_VALUE :
+            MAX_ARRAY_SIZE;
+    }
+```
+### add方法
+```
+   /**
+     * 将指定的元素追加到此列表的末尾。
+     */
+    public boolean add(E e) {
+   //添加元素之前，先调用ensureCapacityInternal方法
+        ensureCapacityInternal(size + 1);  
+        elementData[size++] = e;//数组赋值
+        return true;
     }
 ```
