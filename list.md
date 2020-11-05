@@ -75,32 +75,6 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAcce
             //调用grow方法进行扩容，调用此方法代表已经开始扩容了
             grow(minCapacity);
     }
-
-
-    
-    /**
-     * ArrayList扩容的核心方法。
-     */
-    private void grow(int minCapacity) {
-        int oldCapacity = elementData.length;
-        int newCapacity = oldCapacity + (oldCapacity >> 1);
-        //然后检查新容量是否大于最小需要容量，若还是小于最小需要容量，那么就把最小需要容量当作数组的新容量，
-        if (newCapacity - minCapacity < 0)
-            newCapacity = minCapacity;
-        //再检查新容量是否超出了ArrayList所定义的最大容量，
-        //若超出了，则调用hugeCapacity()来比较minCapacity和 MAX_ARRAY_SIZE，
-        //如果minCapacity大于MAX_ARRAY_SIZE，则新容量则为Interger.MAX_VALUE，否则，新容量大小则为 MAX_ARRAY_SIZE。
-        if (newCapacity - MAX_ARRAY_SIZE > 0)   newCapacity = hugeCapacity(minCapacity);
-        elementData = Arrays.copyOf(elementData, newCapacity);
-    }
-    //比较minCapacity和 MAX_ARRAY_SIZE
-    private static int hugeCapacity(int minCapacity) {
-        if (minCapacity < 0) // overflow
-            throw new OutOfMemoryError();
-        return (minCapacity > MAX_ARRAY_SIZE) ?
-            Integer.MAX_VALUE :
-            MAX_ARRAY_SIZE;
-    }
 ```
 ### add方法
 ```
