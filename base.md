@@ -91,6 +91,6 @@ Set<People> set = new TreeSet<People>(new Comparator<People>() {
 - 实现接口的抽象方法，访问修饰符必须是public
 - 语法：继承在前  实现在后
 # String、StringBuffer和StringBuilder类的区别
-String 类是不可变类，即一旦一个 String 对象被创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象被销毁。类拼接、裁剪字符串等动作，都会产生新的String对象。
+- String 类是不可变类，即一旦一个 String 对象被创建以后，包含在这个对象中的字符序列是不可改变的，直至这个对象被销毁。类拼接、裁剪字符串等动作，都会产生新的String对象。
 Java 提供了两个可变字符串类 StringBuffer和 StringBuilder，“字符串缓冲区”。StringBuilder 类是 JDK 1.5 新增的类，底层都是用了可修改的（char, JDK 9以后是byte）数组,我们可以用append或者insert方法，把字符串添加到已有序列的末尾或者指定位置,StringBuilder 和 StringBuffer 功能基本相似，方法也差不多,二者都继承了AbstractStringBuilder,区别仅在于StringBuilder 最终的方法是取消了synchronized锁。因此在通常情况下,如果需要创建一个内容可变的字符串对象,则应该优先考虑使用StringBuilder类(因为过早优化是万恶源)。
 
