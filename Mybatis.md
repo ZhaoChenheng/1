@@ -22,4 +22,4 @@
 - MyBatis 将所有 Xml 配置信息都封装到 All-In-One 重量级对象 Configuration 内部。
 - 在 Xml 映射文件中，<parameterMap>标签会被解析为 ParameterMap 对象，其每个子元素会被解析为 ParameterMapping 对象。
 - <resultMap>标签会被解析为 ResultMap 对象，其每个子元素会被解析为 ResultMapping 对象。
-- 每一个select、insert、update、delete标签均会被解析为 MappedStatement 对象，标签内的 sql 会被解析为 BoundSql 对象。
+- 每一个 select insert update delete标签均会被解析为 MappedStatement 对象，标签内的 sql 会被解析为 BoundSql 对象。
