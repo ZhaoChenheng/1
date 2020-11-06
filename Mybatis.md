@@ -13,4 +13,4 @@
 
 ## Mapper接口里的方法，参数不同时，方法能重载吗？
 - 接口的全限名，就是映射文件中的namespace的值，接口的方法名,就是映射文件中 MappedStatement 的 id 值，namespace+id 是作为 Map<String, MappedStatement>的 key 使用的，可唯一定位一个MappedStatement
-- XML文件中，每一个select、insert、update、delete标签，都会被解析为一个MappedStatement对象。
+- 映射文件中，每一个select、insert、update、delete标签，都会被解析为一个MappedStatement对象。
