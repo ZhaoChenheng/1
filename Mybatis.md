@@ -11,7 +11,7 @@
 
 
 ## 通常一个 Xml 映射文件，都会写一个 Mapper 接口与之对应，请问，这个 Mapper 接口的工作原理是什么？Mapper接口里的方法，参数不同时，方法能重载吗？
-- Dao 接口的工作原理是 JDK 动态代理，MyBatis 运行时会使用 JDK 动态代理为 Dao 接口生成代理 proxy 对象，代理对象 proxy 会拦截接口方法，转而执行MappedStatement所代表的 sql，然后将sql语句执行结果返回
+- Mapper 接口的工作原理是 JDK 动态代理，MyBatis 运行时会使用 JDK 动态代理为 Mapper 接口生成代理 proxy 对象，代理对象 proxy 会拦截接口方法，转而执行MappedStatement所代表的 sql，然后将sql语句执行结果返回
 - 接口的全限名就是映射文件中的namespace的值，接口的方法名就是映射文件中 MappedStatement 的 id 值，
 - namespace+id 是作为 Map<String, MappedStatement>的 key 使用的，可唯一定位一个MappedStatement
 - 映射文件中，每一个select、insert、update、delete标签，都会被解析为一个MappedStatement对象。
