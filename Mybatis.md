@@ -8,9 +8,7 @@
 <setting name="lazyLoadingEnabled" value="true"/> 
 <setting name="aggressiveLazyLoading" value="false"></setting>
 ```
-- 它的原理是，使用 CGLIB 创建目标对象的代理对象，当调用目标方法时，进入拦截器方法，比如调用 a.getB().getName()，拦截器 invoke()方法发现 a.getB()是 null 值，那么就会单独发送事先
-  保存好的查询关联 B 对象的 sql，把 B 查询上来，然后调用 a.setB(b)，于是 a 的对象 b 属性就有值了，接着完成 a.getB().getName()方法的调用。这就是延迟加载的基本原理。-每一个
-  <select>、<insert>、<update>、<delete>标签均会被解析为 MappedStatement 对象，标签内的 sql 会被解析为 BoundSql 对象。
+
 
 ## Mapper接口里的方法，参数不同时，方法能重载吗？
 - 接口的全限名就是映射文件中的namespace的值，接口的方法名就是映射文件中 MappedStatement 的 id 值，
