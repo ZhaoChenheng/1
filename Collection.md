@@ -13,3 +13,10 @@
 ## 3.Arraylist 和 Vector 的区别?
 - ArrayList 是 List 的主要实现类，底层使用 Object[ ]存储，适用于频繁的查找工作，线程不安全 ；
 - Vector 是 List 的古老实现类，底层使用 Object[ ]存储，线程安全的。
+## 4.HashMap 和 Hashtable 的区别
+- HashMap 是非线程安全的， 效率高一点。HashTable 是线程安全的,HashTable 内部的方法基本都经过synchronized 修饰。
+- HashMap 可以存储 null 的 K 和 V，但 null 作为K只能有一个，null 作为V可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 NullPointerException。
+- Hashtable 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。HashMap 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 HashMap 会将其扩充为 2 的幂次方大小。	
+- JDK1.8 以后的 HashMap 在解决哈希冲突时有了较大的变化，当链表长度大于阈值时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
+## 5.HashSet 如何检查重复
+- 当你把对象加入HashSet时，HashSet 会先计算对象的hashcode值来判断对象加入的位置，同时也会与其他加入的对象的 hashcode 值作比较，如果没有相符的 hashcode，HashSet 会假设对象没有重复出现。但是如果发现有相同 hashcode 值的对象，这时会调用equals()方法来检查 hashcode 相等的对象是否真的相同。如果两者相同，HashSet 就不会让加入操作成功。
